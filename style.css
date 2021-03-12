@@ -29,6 +29,7 @@ header,
 section,
 footer {
     width: 100%;
+    padding: 4em 0;
 }
 
 .container {
@@ -42,8 +43,10 @@ footer {
     gap: 20px;
 }
 
-h2 {
+.section-title {
     flex: 1 0 100%;
+    margin-bottom: 2em;
+    font-size: 2em;
     text-align: center;
 }
 
@@ -62,6 +65,8 @@ a {
 }
 
 .photo {
+    background-image: url(img/My.jpg);
+    background-size: auto 170%;
     border-radius: 50%;
 }
 
@@ -87,7 +92,6 @@ header {
     flex: 0 0 3em;
     width: 3em;
     height: 3em;
-    background-image: url(img/My.jpg);
 }
 
 header #navbar {
@@ -132,12 +136,54 @@ header #navbar {
 }
 
 
+/*  =============== #About section styles ===============*/
+
+#about {
+    background-color: #efebce;
+}
+
+.about-container {
+    gap: 12%;
+}
+
+#about .photo {
+    flex: 0 0 12em;
+    width: 12em;
+    height: 12em;
+}
+
+.about-person {
+    flex: 1 1 60%;
+}
+
+.about-skills {
+    flex: 1 0 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%
+}
+
+
 /*  =============== Styles responsive to screen size ===============*/
+
+@media (max-width: 600px) {
+    .about-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
 
 @media (max-width: 540px) and (max-height: 830px) {
     #welcome-section {
         height: 100vh;
         font-size: 2em;
+    }
+    .about-container {
+        gap: 5vh;
+    }
+    #about .section-title {
+        margin-bottom: 1em;
     }
 }
 
