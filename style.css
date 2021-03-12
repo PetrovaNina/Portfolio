@@ -165,7 +165,55 @@ header #navbar {
 }
 
 
+/*  =============== #Projects section styles ===============*/
+
+#projects {
+    background-color: #d6ce93;
+}
+
+.project-tile {
+    flex: 1 0 31%;
+    min-width: 260px;
+    padding: 0.5em;
+    background-color: #ffffff;
+}
+
+.project-pic {
+    width: 100%;
+    height: 180px;
+}
+
+.project-pic.find-cat {
+    background-image: url(img/findCat.png);
+}
+
+.project-pic.educational {
+    background-image: url(img/education.png);
+}
+
+.project-pic.showcase {
+    background-image: url(img/ShowCase.png);
+}
+
+.tile-title {
+    text-align: center;
+    margin: 0.5em 0 0;
+}
+
+.project-preview p,
+.project-description {
+    display: none;
+}
+
+
 /*  =============== Styles responsive to screen size ===============*/
+
+
+/* @media (max-width:768px) {
+    .project-tile {
+        flex-basis: 40%;
+    }
+} */
 
 @media (max-width: 600px) {
     .about-container {
@@ -182,7 +230,8 @@ header #navbar {
     .about-container {
         gap: 5vh;
     }
-    #about .section-title {
+    #about .section-title,
+    #projects .section-title {
         margin-bottom: 1em;
     }
 }
