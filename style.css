@@ -258,6 +258,21 @@ header #navbar {
 }
 
 
+/*  =============== Footer styles ===============*/
+
+footer {
+    padding: 0;
+    background-color: #735d78;
+    text-align: center;
+    font-size: 0.8em;
+    color: #ffffff63;
+}
+
+footer .container {
+    justify-content: center;
+}
+
+
 /*  =============== Styles responsive to screen size ===============*/
 
 @media (max-width: 600px) {
