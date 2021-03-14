@@ -206,19 +206,68 @@ header #navbar {
 }
 
 
+/*  =============== #Contacts section styles ===============*/
+
+#contacts {
+    background-color: #b392ac;
+    padding-bottom: 6em;
+}
+
+.contact-links {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.contact-links a {
+    width: 4em;
+    height: 4.5em;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    filter: opacity(0.8);
+    transition: all 0.5s;
+}
+
+#profile-link {
+    background-image: url(img/github-character.png);
+    transition: all 0.05s;
+}
+
+#profile-link:hover {
+    background-image: url(img/github-character_smile.png);
+}
+
+#telegram-link {
+    background-image: url(img/telegram.png);
+}
+
+#telegram-link:hover {
+    transform: translate(15%, -15%);
+}
+
+#email-link {
+    background-image: url(img/email.png);
+    transition: all 0.05s;
+}
+
+#email-link:hover {
+    background-image: url(img/email_open.png);
+}
+
+
 /*  =============== Styles responsive to screen size ===============*/
-
-
-/* @media (max-width:768px) {
-    .project-tile {
-        flex-basis: 40%;
-    }
-} */
 
 @media (max-width: 600px) {
     .about-container {
         flex-direction: column;
         justify-content: center;
+    }
+    .contact-links a {
+        width: 3em;
+        height: 3.5em;
     }
 }
 
