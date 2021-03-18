@@ -54,32 +54,32 @@
     <section id="projects">
         <div class="container projects-container">
             <h2 class="section-title">My best projects</h2>
-            <article class="project-tile">
-                <div class="project-pic findCat img-wrapper"></div>
+            <article id="findCat" class="project-tile">
+                <div class="project-pic img-wrapper" style="background-image: url(img/findCat.png)"></div>
                 <div class="project-preview">
                     <h3 class="tile-title">Find Cat</h3>
-                    <p>Multilevel guessing game. The locations of the cats are random generated.</p>
+                    <p>Multilevel guessing game</p>
                     <button class="open-modal btn">Learn more</button>
                 </div>
             </article>
-            <article class="project-tile">
-                <div class="project-pic educational img-wrapper"></div>
+            <article id="educational" class="project-tile">
+                <div class="project-pic img-wrapper" style="background-image: url(img/education.png)"></div>
                 <div class="project-preview">
                     <h3 class="tile-title">Landing page</h3>
-                    <p>Website for educational organisation.</p>
+                    <p>Website for educational organisation</p>
                     <button class="open-modal btn">Learn more</button>
                 </div>
             </article>
-            <article class="project-tile">
-                <div class="project-pic showcase img-wrapper"></div>
+            <article id="showcase" class="project-tile">
+                <div class="project-pic img-wrapper" style="background-image: url(img/ShowCase.png)"></div>
                 <div class="project-preview">
                     <h3 class="tile-title">Showcase for online store</h3>
                     <p>Interactive web page built with pure HTML and CSS</p>
                     <button class="open-modal btn">Learn more</button>
                 </div>
             </article>
-            <article class="project-tile">
-                <div class="project-pic techDoc img-wrapper"></div>
+            <article id="techDoc" class="project-tile">
+                <div class="project-pic img-wrapper"></div>
                 <div class="project-preview">
                     <h3 class="tile-title">Technical documentation</h3>
                     <p>Website with simple navigation</p>
@@ -119,12 +119,12 @@
             <p>Nina Petrova, 2021</p>
         </div>
     </footer>
-    <script src="script.js"></script>
     <div class="modal">
-        <div class="project-description">
-            <div class="close-modal">✕</div>
+        <div class="modal-container">
+            <button class="close-modal">✕</button>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>

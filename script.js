@@ -7,7 +7,7 @@ const projectsDescription = {
             "Responsive designs",
             "CSS animation"
         ],
-        "View site": "https://petrovanina.github.io/FindCatGame",
+        siteLink: "https://petrovanina.github.io/FindCatGame",
     },
     educational: {
         accomplishments: [
@@ -16,7 +16,7 @@ const projectsDescription = {
             "Fully responsive design including survey form and table",
             "Hover and click actions"
         ],
-        "View site": "https://petrovanina.github.io/educational-organization-website",
+        siteLink: "https://petrovanina.github.io/educational-organization-website",
     },
     showcase: {
         accomplishments: [
@@ -24,7 +24,7 @@ const projectsDescription = {
             "Adaptive page layout encoding",
             "Hover and click actions"
         ],
-        "View site": "https://petrovanina.github.io/Online-Store-Showcase",
+        siteLink: "https://petrovanina.github.io/Online-Store-Showcase",
     },
     techDoc: {
         accomplishments: [
@@ -32,7 +32,7 @@ const projectsDescription = {
             "Responsive design",
             "Page sections navigate by clicking the corresponding navbar element"
         ],
-        "View site": "https://petrovanina.github.io/TechDoc-Page",
+        siteLink: "https://petrovanina.github.io/TechDoc-Page",
     },
 };
 
@@ -41,6 +41,7 @@ const openModal = () => {
     for (const tile of tiles) {
         tile.querySelector(".open-modal").onclick = () => {
             document.querySelector(".modal").classList.add("active");
+            createModalContent(tile);
             closeModal();
         }
     }
@@ -48,6 +49,54 @@ const openModal = () => {
 openModal();
 
 const closeModal = () => {
-    document.querySelector(".close-modal").onclick = () =>
-        document.querySelector(".modal").classList.remove("active")
+    document.querySelector(".close-modal").onclick = () => {
+        document.querySelector(".modal-content").remove();
+        document.querySelector(".carousel").remove();
+        document.querySelector(".modal").classList.remove("active");
+    }
+}
+
+const makeElement = (tagName, tagClass, innerText, attributes) => {
+    const element = document.createElement(tagName);
+    if (tagClass) {
+        element.classList.add(tagClass);
+    }
+    if (innerText) {
+        element.textContent = innerText;
+    }
+    if (attributes) {
+        for (let key in attributes) {
+            element.setAttribute(key, attributes[key])
+        }
+    }
+    return element;
+}
+
+const createModalContent = (element) => {
+    const description = projectsDescription[element.getAttribute("id")];
+    const container = document.querySelector(".modal-container");
+    container.appendChild(makeElement("div", "carousel"));
+    container.appendChild(makeElement("div", "modal-content"));
+
+    const carousel = container.querySelector(".carousel")
+    const mainImgUrl = element.querySelector(".project-pic").style.backgroundImage.slice(5, -2);
+    carousel.appendChild(makeElement("img", "modal-main-image", "", { "src": mainImgUrl }));
+
+
+    const modalContent = container.querySelector(".modal-content");
+    modalContent.appendChild(makeElement("h3", "modal-project-title", element.querySelector(".tile-title").innerHTML));
+    modalContent.appendChild(makeElement("p", "modal-project-summary", element.querySelector("p").innerHTML));
+    modalContent.appendChild(makeElement("h4", "modal-project-success", "Accomplishments"));
+    modalContent.appendChild(makeElement("ul"));
+
+    const list = container.querySelector("ul");
+    const listIlems = description.accomplishments;
+    for (let i = 0; i < listIlems.length; i++) {
+        list.appendChild(makeElement("li", "", listIlems[i]));
+    }
+
+    modalContent.appendChild(makeElement("a", "btn", "View site", {
+        "href": description.siteLink,
+        "target": "blank"
+    })).classList.add("modal-site-link");
 }
