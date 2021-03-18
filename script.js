@@ -34,4 +34,20 @@ const projectsDescription = {
         ],
         "View site": "https://petrovanina.github.io/TechDoc-Page",
     },
+};
+
+const openModal = () => {
+    const tiles = document.querySelectorAll(".project-tile");
+    for (const tile of tiles) {
+        tile.querySelector(".open-modal").onclick = () => {
+            document.querySelector(".modal").classList.add("active");
+            closeModal();
+        }
+    }
+}
+openModal();
+
+const closeModal = () => {
+    document.querySelector(".close-modal").onclick = () =>
+        document.querySelector(".modal").classList.remove("active")
 }

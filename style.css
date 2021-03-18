@@ -78,6 +78,7 @@ header {
     top: 0;
     padding: 0.5em 0;
     background-color: #9d8189;
+    z-index: 3;
 }
 
 .header-container {
@@ -260,8 +261,53 @@ header #navbar {
     opacity: 1;
 }
 
+
+/* == Conditions of modal window == */
+
+.modal {
+    display: flex;
+    position: fixed;
+    max-width: 100vw;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    justify-content: center;
+    z-index: -1;
+    transition: all 0.3s;
+}
+
 .project-description {
-    display: none;
+    position: relative;
+    top: 5vh;
+    min-width: fit-content;
+    width: 40vw;
+    min-height: fit-content;
+    height: 90vh;
+    margin: 0 20px;
+    padding: 2em;
+    background-color: #ffffff;
+    transform: scale(0);
+    transition: all 0.2s;
+}
+
+.close-modal {
+    position: absolute;
+    font-size: 1.5em;
+    line-height: 1;
+    font-weight: 900;
+    margin: 0;
+    right: 1em;
+    bottom: 1em;
+}
+
+.modal.active {
+    background-color: #00000050;
+    z-index: 4;
+}
+
+.modal.active .project-description {
+    transform: scale(1);
 }
 
 
