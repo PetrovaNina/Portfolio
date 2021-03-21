@@ -84,8 +84,8 @@ const createModalContent = (element) => {
 
 
     const modalContent = container.querySelector(".modal-content");
-    modalContent.appendChild(makeElement("h3", "modal-project-title", element.querySelector(".tile-title").innerHTML));
-    modalContent.appendChild(makeElement("p", "modal-project-summary", element.querySelector("p").innerHTML));
+    modalContent.appendChild(makeElement("h3", "modal-project-title", element.querySelector(".project-title").innerHTML));
+    modalContent.appendChild(makeElement("p", "modal-project-summary", element.querySelector(".project-summary").innerHTML));
     modalContent.appendChild(makeElement("h4", "modal-project-success", "Accomplishments"));
     modalContent.appendChild(makeElement("ul"));
 

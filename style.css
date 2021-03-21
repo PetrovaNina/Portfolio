@@ -56,6 +56,15 @@ a {
     text-decoration: none;
 }
 
+.btn {
+    padding: 0.5em;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    color: #ffffff;
+    background-color: #ee6c4d;
+}
+
 .img-wrapper {
     background-size: auto 100%;
     background-repeat: no-repeat;
@@ -106,15 +115,6 @@ header #navbar {
 
 .nav-link {
     font-size: 1.2em;
-}
-
-.btn {
-    padding: 0.5em;
-    font-weight: 600;
-    text-transform: uppercase;
-    border: none;
-    color: #ffffff;
-    background-color: #ee6c4d;
 }
 
 
@@ -190,29 +190,23 @@ header #navbar {
     overflow: hidden;
 }
 
-.project-pic {
-    width: 100%;
-    height: 180px;
-}
-
-.tile-title {
-    text-align: center;
-    margin: 0.5em 0 0;
-}
-
-.project-tile::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #ffffff;
-    opacity: 0;
+.project-tile * {
     transition: all 0.5s;
 }
 
-.project-preview p {
+.project-pic {
+    width: 100%;
+    height: 180px;
+    opacity: 1;
+}
+
+.project-title {
+    text-align: center;
+    margin: 0.5em 0 0;
+    opacity: 1;
+}
+
+.project-summary {
     position: absolute;
     top: -30%;
     left: 10%;
@@ -220,39 +214,32 @@ header #navbar {
     margin: 0;
     line-height: 1.2;
     text-align: center;
-    z-index: 1;
     opacity: 0;
-    visibility: collapse;
-    transition: all 0.5s;
 }
 
-.project-preview .open-modal {
+.open-modal {
     position: absolute;
     bottom: -30%;
     left: 25%;
     width: 50%;
     font-size: inherit;
     font-family: inherit;
-    z-index: 2;
     opacity: 0;
-    visibility: collapse;
-    transition: all 0.5s;
 }
 
-.project-tile:hover::before {
-    opacity: 1;
+.project-tile:hover .project-pic,
+.project-tile:hover .project-title {
+    opacity: 0;
 }
 
-.project-tile:hover .project-preview p {
+.project-tile:hover .project-summary {
     top: 20%;
     opacity: 1;
-    visibility: visible;
 }
 
 .project-tile:hover .open-modal {
     bottom: 20%;
     opacity: 1;
-    visibility: visible;
 }
 
 
