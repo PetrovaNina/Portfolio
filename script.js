@@ -100,3 +100,14 @@ const createModalContent = (element) => {
         "target": "blank"
     })).classList.add("modal-site-link");
 }
+
+
+const openNav = () => {
+    const burger = document.querySelector(".hamburger");
+    burger.onclick = () => {
+        burger.classList.toggle("active");
+        document.getElementById("navbar").classList.toggle("active");
+    }
+}
+
+openNav();
