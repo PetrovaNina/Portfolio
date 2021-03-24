@@ -123,6 +123,10 @@ header {
     font-size: 1.2em;
 }
 
+.nav-link.highlighted {
+    color: #fff175;
+}
+
 .hamburger {
     display: none;
     right: 0;
@@ -267,7 +271,7 @@ header {
 
 .modal {
     display: flex;
-    visibility: none;
+    visibility: hidden;
     position: fixed;
     top: 0;
     right: 0;

@@ -36,7 +36,7 @@ const projectsDescription = {
     },
 };
 
-const openModal = () => {
+openModal = () => {
     const tiles = document.querySelectorAll(".project-tile");
     for (const tile of tiles) {
         tile.querySelector(".open-modal").onclick = () => {
@@ -48,7 +48,7 @@ const openModal = () => {
 }
 openModal();
 
-const closeModal = () => {
+closeModal = () => {
     document.querySelector(".close-modal").onclick = () => {
         document.querySelector(".modal-content").remove();
         document.querySelector(".carousel").remove();
@@ -56,7 +56,7 @@ const closeModal = () => {
     }
 }
 
-const makeElement = (tagName, tagClass, innerText, attributes) => {
+makeElement = (tagName, tagClass, innerText, attributes) => {
     const element = document.createElement(tagName);
     if (tagClass) {
         element.classList.add(tagClass);
@@ -72,7 +72,7 @@ const makeElement = (tagName, tagClass, innerText, attributes) => {
     return element;
 }
 
-const createModalContent = (element) => {
+createModalContent = (element) => {
     const description = projectsDescription[element.getAttribute("id")];
     const container = document.querySelector(".modal-container");
     container.appendChild(makeElement("div", "carousel"));
@@ -102,12 +102,74 @@ const createModalContent = (element) => {
 }
 
 
-const openNav = () => {
+manipulateNav = () => {
     const burger = document.querySelector(".hamburger");
+    const navbar = document.getElementById("navbar");
+
+
     burger.onclick = () => {
         burger.classList.toggle("active");
-        document.getElementById("navbar").classList.toggle("active");
+        navbar.classList.toggle("active");
+    }
+
+    const navlinks = document.querySelectorAll(".nav-link");
+
+    for (link of navlinks) {
+        link.onclick = () => {
+            burger.classList.remove("active");
+            navbar.classList.remove("active");
+        }
+    }
+
+}
+
+manipulateNav();
+
+
+getCurrentPage = () => {
+    let currentPage;
+
+    if (isVisible(document.getElementById("welcome-section"))) {
+        currentPage = "welcome-section";
+    } else if (isVisible(document.getElementById("about"))) {
+        currentPage = "about";
+    } else if (isVisible(document.getElementById("projects"))) {
+        currentPage = "projects";
+    } else if (isVisible(document.getElementById("contacts"))) {
+        currentPage = "contacts";
+    }
+
+    highlightLink(currentPage);
+}
+
+isVisible = (elem) => {
+
+    const elemConditions = elem.getBoundingClientRect();
+    const headerHeight = document.querySelector("header").getBoundingClientRect().height;
+
+    // is the larger part of element visible?
+    return (elemConditions.top < ((elemConditions.height / 3) + headerHeight) &&
+        elemConditions.top > (elemConditions.height / 3 * -2) - headerHeight);
+}
+
+highlightLink = (pageID) => {
+    const links = document.querySelectorAll(".nav-link");
+    removeHighlights(links);
+
+    for (link of links) {
+        if (("#" + pageID) === link.getAttribute("href")) {
+            link.classList.add("highlighted");
+        }
     }
 }
 
-openNav();
+removeHighlights = (list) => {
+    for (i = 0; i < list.length; i++) {
+        if (list[i].classList.contains("highlighted")) {
+            list[i].classList.remove("highlighted");
+        }
+    }
+}
+
+getCurrentPage();
+window.addEventListener('scroll', getCurrentPage);
