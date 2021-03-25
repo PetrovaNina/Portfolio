@@ -1,3 +1,74 @@
+const burger = document.querySelector(".hamburger");
+const navbar = document.getElementById("navbar");
+const navlinks = navbar.querySelectorAll(".nav-link");
+const tiles = document.querySelectorAll(".project-tile");
+const modal = document.querySelector(".modal");
+let carousel = modal.querySelector(".carousel");
+let modalContent = modal.querySelector(".modal-content");
+
+// NAVIGATION BAR CONDITIONS
+
+// Manipulate navbar on mobile
+
+burger.onclick = () => {
+    burger.classList.toggle("active");
+    navbar.classList.toggle("active");
+}
+
+// Hide navbar after click a link
+for (let link of navlinks) {
+    link.onclick = () => {
+        burger.classList.remove("active");
+        navbar.classList.remove("active");
+    }
+}
+
+highlightLink = (pageID) => {
+    removeHighlights(navlinks);
+
+    for (let link of navlinks) {
+        if (("#" + pageID) === link.getAttribute("href")) {
+            link.classList.add("highlighted");
+        }
+    }
+}
+
+removeHighlights = (list) => {
+    for (let i = 0; i < list.length; i++) {
+        if (list[i].classList.contains("highlighted")) {
+            list[i].classList.remove("highlighted");
+        }
+    }
+}
+
+isVisible = (elem) => {
+
+    const elemConditions = elem.getBoundingClientRect();
+    const headerHeight = document.querySelector("header").getBoundingClientRect().height;
+
+    // is the larger part of element visible?
+    return (elemConditions.top < ((elemConditions.height / 3) + headerHeight) &&
+        elemConditions.top > (elemConditions.height / 3 * -2) - headerHeight);
+}
+
+window.addEventListener('scroll', getCurrentPage = () => {
+    let currentPage;
+
+    if (isVisible(document.getElementById("welcome-section"))) {
+        currentPage = "welcome-section";
+    } else if (isVisible(document.getElementById("about"))) {
+        currentPage = "about";
+    } else if (isVisible(document.getElementById("projects"))) {
+        currentPage = "projects";
+    } else if (isVisible(document.getElementById("contacts"))) {
+        currentPage = "contacts";
+    }
+
+    highlightLink(currentPage);
+});
+
+// CONTENT SECTION CONDITIONS
+
 const projectsDescription = {
     findCat: {
         accomplishments: [
@@ -36,26 +107,6 @@ const projectsDescription = {
     },
 };
 
-openModal = () => {
-    const tiles = document.querySelectorAll(".project-tile");
-    for (const tile of tiles) {
-        tile.querySelector(".open-modal").onclick = () => {
-            document.querySelector(".modal").classList.add("active");
-            createModalContent(tile);
-            closeModal();
-        }
-    }
-}
-openModal();
-
-closeModal = () => {
-    document.querySelector(".close-modal").onclick = () => {
-        document.querySelector(".modal-content").remove();
-        document.querySelector(".carousel").remove();
-        document.querySelector(".modal").classList.remove("active");
-    }
-}
-
 makeElement = (tagName, tagClass, innerText, attributes) => {
     const element = document.createElement(tagName);
     if (tagClass) {
@@ -66,7 +117,7 @@ makeElement = (tagName, tagClass, innerText, attributes) => {
     }
     if (attributes) {
         for (let key in attributes) {
-            element.setAttribute(key, attributes[key])
+            element.setAttribute(key, attributes[key]);
         }
     }
     return element;
@@ -75,24 +126,22 @@ makeElement = (tagName, tagClass, innerText, attributes) => {
 createModalContent = (element) => {
     const description = projectsDescription[element.getAttribute("id")];
     const container = document.querySelector(".modal-container");
-    container.appendChild(makeElement("div", "carousel"));
-    container.appendChild(makeElement("div", "modal-content"));
+    carousel = container.appendChild(makeElement("div", "carousel"));
+    modalContent = container.appendChild(makeElement("div", "modal-content"));
 
-    const carousel = container.querySelector(".carousel")
     const mainImgUrl = element.querySelector(".project-pic").style.backgroundImage.slice(5, -2);
     carousel.appendChild(makeElement("img", "modal-main-image", "", { "src": mainImgUrl }));
 
 
-    const modalContent = container.querySelector(".modal-content");
     modalContent.appendChild(makeElement("h3", "modal-project-title", element.querySelector(".project-title").innerHTML));
     modalContent.appendChild(makeElement("p", "modal-project-summary", element.querySelector(".project-summary").innerHTML));
     modalContent.appendChild(makeElement("h4", "modal-project-success", "Accomplishments"));
     modalContent.appendChild(makeElement("ul"));
 
     const list = container.querySelector("ul");
-    const listIlems = description.accomplishments;
-    for (let i = 0; i < listIlems.length; i++) {
-        list.appendChild(makeElement("li", "", listIlems[i]));
+    const listItems = description.accomplishments;
+    for (let i = 0; i < listItems.length; i++) {
+        list.appendChild(makeElement("li", "", listItems[i]));
     }
 
     modalContent.appendChild(makeElement("a", "btn", "View site", {
@@ -101,75 +150,43 @@ createModalContent = (element) => {
     })).classList.add("modal-site-link");
 }
 
-
-manipulateNav = () => {
-    const burger = document.querySelector(".hamburger");
-    const navbar = document.getElementById("navbar");
-
-
-    burger.onclick = () => {
-        burger.classList.toggle("active");
-        navbar.classList.toggle("active");
+deleteContent = () => {
+    if (modalContent && carousel) {
+        modalContent.remove();
+        carousel.remove();
     }
+}
 
-    const navlinks = document.querySelectorAll(".nav-link");
+// Open modal window by click or "Enter" key
+for (let tile of tiles) {
+    const openModal = () => {
+        deleteContent();
+        modal.classList.add("active");
+        createModalContent(tile);
+    };
 
-    for (link of navlinks) {
-        link.onclick = () => {
-            burger.classList.remove("active");
-            navbar.classList.remove("active");
+    tile.querySelector(".open-modal").onclick = openModal;
+
+    // Set navigation by "Tab"
+    tile.setAttribute("tabindex", "0");
+    tile.addEventListener('keydown', function(evt) {
+        if (evt.key === "Enter") {
+            openModal();
         }
+    });
+}
+
+// Close modal window by click or "Esc" key
+
+closeModal = () => {
+    modal.classList.remove("active");
+    deleteContent();
+}
+
+document.querySelector(".close-modal").onclick = closeModal;
+
+document.addEventListener('keydown', function(evt) {
+    if (evt.key === "Escape") {
+        closeModal();
     }
-
-}
-
-manipulateNav();
-
-
-getCurrentPage = () => {
-    let currentPage;
-
-    if (isVisible(document.getElementById("welcome-section"))) {
-        currentPage = "welcome-section";
-    } else if (isVisible(document.getElementById("about"))) {
-        currentPage = "about";
-    } else if (isVisible(document.getElementById("projects"))) {
-        currentPage = "projects";
-    } else if (isVisible(document.getElementById("contacts"))) {
-        currentPage = "contacts";
-    }
-
-    highlightLink(currentPage);
-}
-
-isVisible = (elem) => {
-
-    const elemConditions = elem.getBoundingClientRect();
-    const headerHeight = document.querySelector("header").getBoundingClientRect().height;
-
-    // is the larger part of element visible?
-    return (elemConditions.top < ((elemConditions.height / 3) + headerHeight) &&
-        elemConditions.top > (elemConditions.height / 3 * -2) - headerHeight);
-}
-
-highlightLink = (pageID) => {
-    const links = document.querySelectorAll(".nav-link");
-    removeHighlights(links);
-
-    for (link of links) {
-        if (("#" + pageID) === link.getAttribute("href")) {
-            link.classList.add("highlighted");
-        }
-    }
-}
-
-removeHighlights = (list) => {
-    for (i = 0; i < list.length; i++) {
-        if (list[i].classList.contains("highlighted")) {
-            list[i].classList.remove("highlighted");
-        }
-    }
-}
-
-getCurrentPage();
-window.addEventListener('scroll', getCurrentPage);
+});
