@@ -1,3 +1,4 @@
+const headerPhoto = document.querySelector(".header-photo");
 const burger = document.querySelector(".hamburger");
 const navbar = document.getElementById("navbar");
 const navlinks = navbar.querySelectorAll(".nav-link");
@@ -56,16 +57,26 @@ window.addEventListener('scroll', getCurrentPage = () => {
 
     if (isVisible(document.getElementById("welcome-section"))) {
         currentPage = "welcome-section";
+        hideHeaderPhoto()
     } else if (isVisible(document.getElementById("about"))) {
         currentPage = "about";
+        headerPhoto.classList.add("visible");
     } else if (isVisible(document.getElementById("projects"))) {
         currentPage = "projects";
+        headerPhoto.classList.add("visible");
     } else if (isVisible(document.getElementById("contacts"))) {
         currentPage = "contacts";
+        headerPhoto.classList.add("visible");
     }
 
     highlightLink(currentPage);
 });
+
+hideHeaderPhoto = () => {
+    if (headerPhoto.classList.contains("visible")) {
+        headerPhoto.classList.remove("visible");
+    }
+}
 
 // CONTENT SECTION CONDITIONS
 
