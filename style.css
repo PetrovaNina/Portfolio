@@ -7,6 +7,7 @@
 html {
     width: 100vw;
     height: 100%;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -79,6 +80,33 @@ a {
     border-radius: 50%;
 }
 
+.preload {
+    display: none;
+}
+
+.project-tile *,
+.header-photo-link,
+#navbar {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.nav-link,
+.modal,
+.modal-container,
+.hamburger::before,
+.hamburger::after,
+.hamburger span {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
 
 /*  =============== Header styles ===============*/
 
@@ -101,18 +129,23 @@ header {
 .header-photo-link {
     position: absolute;
     z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.header-photo-link.visible {
+    visibility: visible;
+    opacity: 1;
 }
 
 .header-photo {
     flex: 0 0 3em;
     width: 3em;
     height: 3em;
-    opacity: 0;
-    transition: all 0.5s ease;
 }
 
-.header-photo.visible {
-    opacity: 1;
+.header-photo-link:hover .header-photo {
+    border: 2px solid #fff175;
 }
 
 #navbar {
@@ -126,6 +159,10 @@ header {
 
 .nav-link {
     font-size: 1.2em;
+}
+
+.nav-link:not(.highlighted):hover {
+    transform: scale(1.1);
 }
 
 .nav-link.highlighted {
@@ -210,10 +247,6 @@ header {
     overflow: hidden;
 }
 
-.project-tile * {
-    transition: all 0.5s;
-}
-
 .project-pic {
     width: 100%;
     height: 180px;
@@ -285,7 +318,6 @@ header {
     pointer-events: none;
     justify-content: center;
     align-items: center;
-    transition: all 0.3s;
     z-index: 5;
 }
 
@@ -296,7 +328,6 @@ header {
     margin: 0 20px;
     background-color: #ffffff;
     transform: scale(0);
-    transition: all 0.2s;
 }
 
 .close-modal {
@@ -390,12 +421,15 @@ header {
     background-repeat: no-repeat;
     background-position: bottom;
     filter: opacity(0.8);
-    transition: all 0.5s;
+    -webkit-transition: all 0.05s ease;
+    -moz-transition: all 0.05s ease;
+    -ms-transition: all 0.05s ease;
+    -o-transition: all 0.05s ease;
+    transition: all 0.05s;
 }
 
 #profile-link {
     background-image: url(img/github-character.png);
-    transition: all 0.05s;
 }
 
 #profile-link:hover {
@@ -404,6 +438,11 @@ header {
 
 #telegram-link {
     background-image: url(img/telegram.png);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s;
 }
 
 #telegram-link:hover {
@@ -412,7 +451,6 @@ header {
 
 #email-link {
     background-image: url(img/email.png);
-    transition: all 0.05s;
 }
 
 #email-link:hover {
@@ -486,7 +524,6 @@ footer .container {
         flex-direction: column;
         gap: 1em;
         background-color: #2a2546c4;
-        transition: all 0.4s;
         z-index: -1;
     }
     #navbar.active {
@@ -508,7 +545,6 @@ footer .container {
         width: 100%;
         height: 2px;
         background-color: #ffffff;
-        transition: all 0.3s;
     }
     .hamburger::before {
         top: 0;
