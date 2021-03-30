@@ -159,7 +159,7 @@ header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 10%
+    gap: 10%;
 }
 
 .nav-link {
@@ -522,6 +522,9 @@ footer .container {
     body {
         font-size: 14px;
     }
+}
+
+@media (max-width: 450px) {
     header::before {
         content: "";
         position: absolute;
@@ -540,12 +543,12 @@ footer .container {
         height: fit-content;
         padding: 1em 0;
         flex-direction: column;
-        gap: 1em;
+        gap: 0.5em;
         background-color: #2a2546c4;
         z-index: -1;
     }
     #navbar.active {
-        bottom: -8.9em;
+        bottom: -9.7em;
     }
     .hamburger {
         display: block;
