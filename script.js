@@ -52,7 +52,7 @@ isVisible = (elem) => {
         elemConditions.top > (elemConditions.height / 3 * -2) - headerHeight);
 }
 
-window.addEventListener('scroll', getCurrentPage = () => {
+window.addEventListener('scroll', () => {
     let currentPage;
 
     if (isVisible(document.getElementById("welcome-section"))) {
@@ -168,19 +168,40 @@ deleteContent = () => {
     }
 }
 
+// 
+const setTabIndex = () => {
+    const focusableElements = document.querySelectorAll('button, [href], [tabindex]:not([tabindex="-1"])');
+    for (let i = 0; i < focusableElements.length; i++) {
+        if (modal.classList.contains("active")) {
+            focusableElements[i].setAttribute("tabindex", "-2");
+            modal.querySelector(".modal-site-link").setAttribute("tabindex", "0");
+
+            // Switch focus to the tile after the current one
+            if (focusableElements[i] === document.activeElement) {
+                focusableElements[i + 2].classList.add("next-focused")
+            }
+        } else {
+            focusableElements[i].setAttribute("tabindex", "0");
+            document.querySelector(".next-focused").focus();
+            document.querySelector(".next-focused").classList.remove("next-focused");
+        }
+    }
+}
+
 // Open modal window by click or "Enter" key
 for (let tile of tiles) {
     const openModal = () => {
         deleteContent();
         modal.classList.add("active");
         createModalContent(tile);
+        setTabIndex();
     };
 
     tile.querySelector(".open-modal").onclick = openModal;
 
     // Set navigation by "Tab"
     tile.setAttribute("tabindex", "0");
-    tile.addEventListener('keydown', function(evt) {
+    tile.addEventListener('keydown', (evt) => {
         if (evt.key === "Enter") {
             openModal();
         }
@@ -192,11 +213,12 @@ for (let tile of tiles) {
 closeModal = () => {
     modal.classList.remove("active");
     setTimeout(deleteContent, 1000);
+    setTabIndex();
 }
 
 document.querySelector(".close-modal").onclick = closeModal;
 
-document.addEventListener('keydown', function(evt) {
+document.addEventListener('keydown', (evt) => {
     if (evt.key === "Escape") {
         closeModal();
     }
