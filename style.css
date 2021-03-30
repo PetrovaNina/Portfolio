@@ -33,6 +33,10 @@ footer {
     padding: 4em 0;
 }
 
+header * :focus {
+    outline: none;
+}
+
 .container {
     max-width: 900px;
     margin: 0 auto;
@@ -144,6 +148,7 @@ header {
     height: 3em;
 }
 
+.header-photo-link:focus .header-photo,
 .header-photo-link:hover .header-photo {
     border: 2px solid #fff175;
 }
@@ -159,10 +164,20 @@ header {
 
 .nav-link {
     font-size: 1.2em;
+    margin: 0;
+    padding: 5px;
+}
+
+.nav-link:focus {
+    outline: 2px solid #fff175;
 }
 
 .nav-link:not(.highlighted):hover {
     transform: scale(1.1);
+}
+
+.nav-link:active {
+    outline: none;
 }
 
 .nav-link.highlighted {
@@ -406,7 +421,7 @@ header {
     padding-bottom: 6em;
 }
 
-.contact-links {
+.contact-links-list {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -414,9 +429,9 @@ header {
     align-items: center;
 }
 
-.contact-links a {
+.contact-link {
     width: 4em;
-    height: 4.5em;
+    height: 4em;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -432,6 +447,7 @@ header {
     background-image: url(img/github-character.png);
 }
 
+#profile-link:focus,
 #profile-link:hover {
     background-image: url(img/github-character_smile.png);
 }
@@ -445,6 +461,7 @@ header {
     transition: all 0.5s;
 }
 
+#telegram-link:focus,
 #telegram-link:hover {
     transform: translate(15%, -15%);
 }
@@ -453,6 +470,7 @@ header {
     background-image: url(img/email.png);
 }
 
+#email-link:focus,
 #email-link:hover {
     background-image: url(img/email_open.png);
 }
