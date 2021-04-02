@@ -168,22 +168,18 @@ deleteContent = () => {
     }
 }
 
-// 
-const setTabIndex = () => {
-    const focusableElements = document.querySelectorAll('button, [href], [tabindex]:not([tabindex="-1"])');
+setTabIndex = () => {
+    const focusableElements = document.querySelectorAll('[href], [tabindex]:not([tabindex="-1"])');
     for (let i = 0; i < focusableElements.length; i++) {
         if (modal.classList.contains("active")) {
-            focusableElements[i].setAttribute("tabindex", "-2");
-            modal.querySelector(".modal-site-link").setAttribute("tabindex", "0");
-
             // Switch focus to the tile after the current one
             if (focusableElements[i] === document.activeElement) {
-                focusableElements[i + 2].classList.add("next-focused")
+                focusableElements[i + 1].classList.add("next-focused")
             }
+            // Set tabindex to elements
+            focusableElements[i].setAttribute("tabindex", "-2");
         } else {
             focusableElements[i].setAttribute("tabindex", "0");
-            document.querySelector(".next-focused").focus();
-            document.querySelector(".next-focused").classList.remove("next-focused");
         }
     }
 }
@@ -195,6 +191,7 @@ for (let tile of tiles) {
         modal.classList.add("active");
         createModalContent(tile);
         setTabIndex();
+        modal.querySelector(".modal-site-link").setAttribute("tabindex", "0");
     };
 
     tile.querySelector(".open-modal").onclick = openModal;
@@ -214,6 +211,8 @@ closeModal = () => {
     modal.classList.remove("active");
     setTimeout(deleteContent, 1000);
     setTabIndex();
+    document.querySelector(".next-focused").focus();
+    document.querySelector(".next-focused").classList.remove("next-focused");
 }
 
 document.querySelector(".close-modal").onclick = closeModal;
