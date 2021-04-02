@@ -30,11 +30,16 @@ header,
 section,
 footer {
     width: 100%;
-    padding: 4em 0;
 }
 
 header * :focus {
     outline: none;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    padding: 4em 0;
 }
 
 .container {
@@ -50,6 +55,7 @@ header * :focus {
 
 .section-title {
     flex: 1 0 100%;
+    margin-top: 0;
     margin-bottom: 2em;
     font-size: 2em;
     text-align: center;
@@ -186,7 +192,7 @@ header {
 /*  =============== First screen styles ===============*/
 
 #welcome-section {
-    height: 100vh;
+    min-height: 100vh;
     /* temporary styles */
     font-size: 3em;
     background-color: #d8a48f;
@@ -425,6 +431,7 @@ header {
 #contacts {
     background-color: #b392ac;
     padding-bottom: 6em;
+    min-height: 90vh;
 }
 
 .contact-links-list {
@@ -638,5 +645,14 @@ footer .container {
     }
     .projects-container {
         padding: 0;
+    }
+}
+
+@media (min-width: 2000px) {
+    body {
+        font-size: 1.1em;
+    }
+    section {
+        min-height: 80vh;
     }
 }
