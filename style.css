@@ -32,7 +32,8 @@ footer {
     width: 100%;
 }
 
-header * :focus {
+header * :focus,
+.welcome-message .btn:focus {
     outline: none;
 }
 
@@ -71,9 +72,16 @@ a {
     padding: 0.5em;
     font-weight: 600;
     text-transform: uppercase;
-    border: none;
+    text-align: center;
     color: #ffffff;
     background-color: #ee6c4d;
+    border: none;
+    border-radius: 0.2em;
+}
+
+.btn:focus,
+.btn:hover {
+    background-image: linear-gradient(#ee6c4d, #e66444, #e66444, #ee6c4d);
 }
 
 .img-wrapper {
@@ -104,6 +112,7 @@ a {
     transition: all 0.5s ease;
 }
 
+.btn,
 .nav-link,
 .modal,
 .modal-container,
@@ -199,21 +208,21 @@ header {
 }
 
 .welcome-container {
-    height: 100%;
+    height: fit-content;
     justify-content: center;
-}
-
-.welcome-container * {
-    margin: 0;
-    line-height: 1em;
 }
 
 .welcome-message {
     display: flex;
     flex-direction: column;
-    gap: inherit;
-    max-width: 80%;
-    margin: 0 auto;
+    max-width: 60%;
+    margin: 1em auto 0;
+}
+
+.welcome-message * {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 1em;
 }
 
 
@@ -516,6 +525,9 @@ footer .container {
     #navbar {
         flex-basis: 55%;
     }
+    .welcome-message {
+        max-width: 75%;
+    }
     .about-container {
         flex-direction: column;
         justify-content: center;
@@ -548,6 +560,9 @@ footer .container {
 }
 
 @media (width: 540px) and (height: 720px) {
+    .welcome-message {
+        max-width: 55%;
+    }
     .project-tile {
         height: 190px;
     }
@@ -627,6 +642,12 @@ footer .container {
     }
 }
 
+@media (max-width: 375px) {
+    .welcome-message {
+        max-width: 85%;
+    }
+}
+
 @media (max-width: 360px) {
     body {
         font-size: 14px;
@@ -645,6 +666,47 @@ footer .container {
     }
     .projects-container {
         padding: 0;
+    }
+    .welcome-message {
+        max-width: 90%;
+    }
+}
+
+@media (min-width: 1076px) {
+    .welcome-message .btn {
+        position: relative;
+        width: fit-content;
+        padding: 0.3em 1.5em 0.3em 0.5em;
+        text-align: left;
+    }
+    .welcome-message .btn::after {
+        content: "\25BC";
+        position: absolute;
+        top: 0.3em;
+        right: 0.5em;
+        margin-top: 0;
+        font-size: 0.8em;
+    }
+    .welcome-message .btn:hover::after,
+    .welcome-message .btn:focus::after {
+        animation: arrowDown 0.8s ease 2;
+    }
+    @keyframes arrowDown {
+        0% {
+            opacity: 0;
+        }
+        10% {
+            transform: translateY(-0.5em);
+        }
+        50% {
+            opacity: 1;
+        }
+        90% {
+            transform: translateY(0.5em);
+        }
+        100% {
+            opacity: 0;
+        }
     }
 }
 
