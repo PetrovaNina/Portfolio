@@ -249,6 +249,7 @@ header {
 }
 
 .welcome-message p {
+    font-size: 0.8em;
     line-height: 1.2em;
 }
 
@@ -580,9 +581,6 @@ footer .container {
         min-height: 100vh;
         font-size: 2em;
     }
-    .welcome-message {
-        max-width: 75%;
-    }
     .about-container {
         flex-direction: column;
         justify-content: center;
@@ -616,9 +614,6 @@ footer .container {
 }
 
 @media (width: 540px) and (height: 720px) {
-    .welcome-message {
-        max-width: 55%;
-    }
     .project-tile {
         height: 190px;
     }
@@ -695,19 +690,22 @@ footer .container {
     .hamburger.active span {
         transform: scale(0);
     }
+    .welcome-message {
+        max-width: 75%;
+    }
 }
 
 @media (max-width: 375px) {
-    .welcome-message {
-        max-width: 85%;
-    }
     .contact-link {
         width: 2.7em;
         height: 3em;
     }
+    .welcome-message {
+        max-width: 85%;
+    }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 320px) {
     .modal-container {
         margin: 0 10px;
     }
@@ -715,7 +713,7 @@ footer .container {
         padding: 0;
     }
     .welcome-message {
-        max-width: 90%;
+        max-width: 100%;
         font-size: 0.9em;
     }
     .welcome-message .btn {
