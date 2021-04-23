@@ -89,7 +89,7 @@ const projectsDescription = {
             "Responsive designs",
             "CSS animation"
         ],
-        siteLink: "https://petrovanina.github.io/FindCatGame",
+        siteLink: "https://petrovanina.github.io/Find_cat",
     },
     educational: {
         accomplishments: [
@@ -98,7 +98,7 @@ const projectsDescription = {
             "Fully responsive design including survey form and table",
             "Hover and click actions"
         ],
-        siteLink: "https://petrovanina.github.io/educational-organization-website",
+        siteLink: "https://petrovanina.github.io/Edu_landing",
     },
     showcase: {
         accomplishments: [
@@ -106,7 +106,7 @@ const projectsDescription = {
             "Adaptive page layout encoding",
             "Hover and click actions"
         ],
-        siteLink: "https://petrovanina.github.io/Online-Store-Showcase",
+        siteLink: "https://petrovanina.github.io/Showcase",
     },
     techDoc: {
         accomplishments: [
