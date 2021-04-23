@@ -39,9 +39,6 @@ header::before,
 #welcome-section,
 footer {
     background-color: #739aaa;
-    /* #74c6a2; */
-    /* #93d3ca; */
-    /* #21265d; */
     color: #ffffff;
 }
 
@@ -118,8 +115,6 @@ a {
     background-size: auto 100%;
     background-repeat: no-repeat;
     background-position: center;
-    /* temporary styles */
-    background-color: #d3d3d373;
 }
 
 .photo {
@@ -304,7 +299,7 @@ header {
 
 #projects {
     background-color: #c0d3da;
-    /* #d6ce93; */
+    min-height: 80vh;
 }
 
 #projects .section-title {
@@ -313,7 +308,6 @@ header {
 
 .projects-container {
     justify-content: center;
-    align-items: stretch;
     align-content: space-between;
     padding: 0 10px;
 }
@@ -485,9 +479,6 @@ header {
 /*  =============== #Contacts section styles ===============*/
 
 #contacts {
-    /* background-color: #fff494; */
-    /* #b1b6a6; */
-    /* #b392ac; */
     padding-bottom: 6em;
     min-height: 90vh;
 }
@@ -732,6 +723,16 @@ footer .container {
     }
     .section-title {
         font-size: 1.5em;
+    }
+}
+
+@media (min-width: 540px) and (max-width: 1023) {
+    #projects {
+        min-height: 50vh;
+    }
+    .project-tile {
+        position: relative;
+        max-width: calc((100% / 2));
     }
 }
 
