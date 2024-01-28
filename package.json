@@ -1,4 +1,5 @@
 {
+  "author": "Nina Petrova",
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
@@ -7,7 +8,8 @@
     "dev": "next dev",
     "translate": "i18next -c i18next-parser.config.js",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "deploy": "npx @cloudflare/next-on-pages@1"
   },
   "dependencies": {
     "i18next": "^23.7.18",
@@ -16,16 +18,20 @@
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-i18next": "^14.0.1"
+    "react-i18next": "^14.0.1",
+    "vercel": "^33.3.0",
+    "wrangler": "^3.25.0"
   },
   "devDependencies": {
-    "@types/node": "^20.11.5",
+    "@cloudflare/next-on-pages": "^1.8.5",
+    "@types/node": "^20.11.9",
+    "@types/react": "^18.2.48",
     "autoprefixer": "^10.4.17",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "postcss": "^8.4.33",
     "postcss-preset-env": "^9.3.0",
-    "typescript": "^5"
+    "typescript": "^5.3.3"
   },
   "i18n": {
     "locales": [

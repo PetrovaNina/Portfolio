@@ -1,6 +1,10 @@
 const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
+  i18n: {
+    locales: ['en', 'ru'],
+    defaultLocale: 'en',
+  },
   async headers() {
     return [
       {

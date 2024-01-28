@@ -11,7 +11,6 @@ interface LanguagesSwitcherProps {
 const LanguagesSwitcher: React.FC<LanguagesSwitcherProps> = ({
   className,
   activeClassName,
-  ...props
 }) => {
   const { pathname, asPath, query, push } = useRouter();
 
@@ -26,11 +25,16 @@ const LanguagesSwitcher: React.FC<LanguagesSwitcherProps> = ({
           )}
           onClick={() => {
             i18next.changeLanguage(locale);
-            if (query.lang && typeof query.lang === "string")
-              push({ pathname, query }, asPath.replace(query.lang, locale), {
-                scroll: false,
-                locale,
-              });
+
+            const lang =
+              query.lang && typeof query.lang === "string"
+                ? query.lang
+                : locale;
+            // if (query.lang && typeof query.lang === "string")
+            push({ pathname, query }, asPath.replace(lang, locale), {
+              scroll: false,
+              locale,
+            });
           }}
           style={{
             borderRight: i < LOCALES.length - 1 ? "2px solid white" : "none",

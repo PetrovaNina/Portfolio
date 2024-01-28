@@ -84,3 +84,5 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (
 };
 
 export default Home;
+
+export const runtime = "experimental-edge";

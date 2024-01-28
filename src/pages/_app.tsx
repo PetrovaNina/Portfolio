@@ -2,9 +2,7 @@ import { AppProps } from "next/app";
 import { I18nextProvider } from "react-i18next";
 import i18n from "../i18n";
 import { useRouter } from "next/router";
-import { GetServerSidePropsContext } from "next";
-import { useEffect, useState } from "react";
-import Header from "@/components/Header";
+import { useEffect } from "react";
 import Footer from "@/components/Footer";
 import useWindowResize from "@/functions/customHooks/useWindowResize";
 
@@ -16,14 +14,14 @@ function App({ Component, pageProps }: AppProps) {
 
   const isTouch = width <= 768;
 
-  useEffect(() => {
-    if (
-      !["en", "ru"].some((l) => l === router.query.lang) ||
-      router.pathname === "/_error"
-    ) {
-      router.push(`/en`, `/en`, { locale: "en" });
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (
+  //     !["en", "ru"].some((l) => l === router.query.lang) ||
+  //     router.pathname === "/_error"
+  //   ) {
+  //     router.push(`/en`, `/en`, { locale: "en" });
+  //   }
+  // }, []);
 
   return (
     <I18nextProvider i18n={i18n}>
