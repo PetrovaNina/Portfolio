@@ -1,0 +1,161 @@
+.header {
+  position: absolute;
+  top: 0;
+  background: transparent;
+  padding: 0.5em 0;
+  z-index: 1;
+
+  &.fixed {
+    position: fixed;
+    background-color: var(--semi-black);
+    backdrop-filter: blur(5px);
+  }
+
+  .container {
+    height: 3em;
+    flex-wrap: nowrap;
+  }
+
+  .home_link {
+    background-color: var(--white);
+    width: 3em;
+    height: 3em;
+    z-index: 1;
+    /* visibility: hidden;
+    opacity: 0; */
+
+    /* &.visible {
+      visibility: visible;
+      opacity: 1;
+    } */
+
+    &:focus,
+    &:hover {
+      border: 2px solid var(--accent);
+    }
+  }
+
+  .navbar {
+    height: 3em;
+    display: flex;
+    column-gap: 1em;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navbar_link {
+    margin: 0;
+    padding: 0 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    /* color: var(--white); */
+
+    &.highlighted,
+    &:focus {
+      color: var(--accent);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--accent);
+    }
+
+    &:not(.navbar_link.highlighted):hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      outline: none;
+    }
+  }
+
+  .mobileMenu {
+    display: block;
+    position: relative;
+    width: 20px;
+    padding: 1.5em;
+    height: 1em;
+
+    &::before,
+    &::after,
+    span {
+      position: absolute;
+      content: "";
+      width: 20px;
+      height: 2px;
+      right: 1em;
+      background-color: #ffffff;
+      transition: var(--transition-03);
+    }
+
+    &::before {
+      top: 1em;
+    }
+
+    &::after {
+      bottom: 1em;
+    }
+
+    & > span {
+      top: calc(1.5em - 1px);
+    }
+
+    /* Change mobileMenu to X */
+    &.open {
+      &::before {
+        transform: rotate(45deg);
+        top: 45%;
+      }
+      &::after {
+        transform: rotate(-45deg);
+        top: 45%;
+      }
+      & > span {
+        transform: scale(0);
+      }
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    position: fixed;
+    background-color: var(--semi-black);
+    &.fixed {
+      backdrop-filter: unset;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      backdrop-filter: blur(5px);
+    }
+
+    .navbar {
+      position: absolute;
+      top: -100%;
+      width: 100%;
+      left: 0;
+      height: fit-content;
+      padding: 1em 0;
+      flex-direction: column;
+      gap: 0.5em;
+      background-color: var(--semi-black);
+      backdrop-filter: blur(5px);
+      transition: var(--transition-04);
+      opacity: 0;
+      z-index: -1;
+    }
+
+    .mobileMenu.open + .navbar {
+      top: 4em;
+      opacity: 1;
+    }
+
+    .navbar_link {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
