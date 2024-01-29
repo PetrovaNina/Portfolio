@@ -1,51 +1,55 @@
 import { t } from "i18next";
 import s from "./Projects.module.css";
 import { ForwardRefRenderFunction, forwardRef } from "react";
-
-const Project: React.FC = () => {
-  return (
-    <div className="background-title__wrapper container wrapper--narrow animation smoothUp">
-      <h2 className="section-title">My favorite projects</h2>
-      <div className="before__block">
-        <div className="before-after__text tile__list">
-          <div className="before-after__content-wrapper">
-            <div className="tile__item black-bg">
-              <span className="tile__title text--green">
-                {t("FIND CAT mini-game")}
-              </span>
-              <ul>
-                <li>Concept generation</li>
-                <li>Built with JavaScript</li>
-                <li>
-                  Creating and interaction with DOM elements dynamically through
-                  JS
-                </li>
-                <li>Responsive designs</li>
-                <li>CSS animation</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="before-after__images">
-          <div
-            className="image-div container3-4"
-            style={{ backgroundImage: "url(img/findCat.png)" }}
-          ></div>
-        </div>
-      </div>
-    </div>
-  );
-};
+import classNames from "@/functions/classNames";
+import projects from "./projectsList";
+import Link from "next/link";
 
 const Projects: ForwardRefRenderFunction<HTMLDivElement, {}> = (props, ref) => {
   return (
-    <section
-      ref={ref}
-      {...props}
-      id="projects"
-      className="before-after not-equal black-bg"
-    >
-      <Project />
+    <section ref={ref} {...props} id="projects">
+      <div className={classNames(s.container, "container container--m")}>
+        <h2 className="section-title">{t("My favorite projects")}</h2>
+        {projects.map(
+          ({ name, intro, title, list, conclusion, href, imagesCount }, i) => (
+            <div key={name} className={classNames(i % 2 && s.flip, s.project)}>
+              <div className={s.images}>
+                {Array(imagesCount)
+                  .fill("")
+                  .map((_, i) => (
+                    <div
+                      key={i}
+                      className={s.imageDiv}
+                      style={{
+                        backgroundImage: `url('img/${name}${i + 1}.webp')`,
+                      }}
+                    />
+                  ))}
+              </div>
+              <div className={s.text}>
+                <h3 className="title--large">{title}</h3>
+                <p>{intro}</p>
+                <ul>
+                  {list.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+                {conclusion && (
+                  <p>
+                    {conclusion}
+                    {href && (
+                      <Link className={s.link} href={href} target="_blank">
+                        {" "}
+                        {t("VIEW SITE")}
+                      </Link>
+                    )}
+                  </p>
+                )}
+              </div>
+            </div>
+          )
+        )}
+      </div>
     </section>
   );
 };

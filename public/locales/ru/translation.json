@@ -5,8 +5,56 @@
   "Hi! I'm Nina Petrova": "Привет! Я Нина Петрова",
   "Learn more": "Узнать больше",
   "about": "Обо мне",
-  "projects": "Проекты",
+  "projects": "",
   "contacts": "Контакты",
-  "FIND CAT mini-game": "",
+  "My favorite projects": "Избранные проекты",
+  "projectsTexts": {
+    "audio": {
+      "title": "",
+      "intro": "",
+      "list": {
+        "0": "",
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": ""
+      }
+    },
+    "digital": {
+      "title": "",
+      "intro": "",
+      "list": {
+        "0": "",
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": ""
+      }
+    },
+    "nft": {
+      "title": "",
+      "intro": "",
+      "list": {
+        "0": "",
+        "1": "",
+        "2": "",
+        "3": ""
+      }
+    },
+    "cats": {
+      "title": "",
+      "intro": "",
+      "list": {
+        "0": "",
+        "1": "",
+        "2": ""
+      },
+      "conclusion": ""
+    }
+  },
   "Nina Petrova | Frontend Developer Portfolio": "Нина Петрова | Frontend Developer Portfolio"
 }

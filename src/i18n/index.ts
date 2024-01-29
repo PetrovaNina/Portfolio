@@ -22,7 +22,6 @@ i18next
     load: "languageOnly",
     returnEmptyString: false,
     debug: false,
-    keySeparator: false,
     resources: translations,
     fallbackLng: DEFAULT_LOCALE,
     supportedLngs: LOCALES,

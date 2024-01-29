@@ -15,7 +15,7 @@ const Header: React.ForwardRefRenderFunction<ImperativeRef, HeaderProps> = (
 ) => {
   const [visibleItem, setVisibleItem] = useState<string | null>();
 
-  const navLinksU = {
+  const navLinks = {
     about: t("about"),
     projects: t("projects"),
     contacts: t("contacts"),
@@ -30,14 +30,14 @@ const Header: React.ForwardRefRenderFunction<ImperativeRef, HeaderProps> = (
   );
 
   return (
-    <header className={classNames(s.header, visibleItem && s.fixed)}>
+    <header className={classNames(s.header, "before", visibleItem && s.fixed)}>
       <div className="container">
         <Link href="#" className={s.home_link} />
         {isTouch && (
           <MobileMenu className={s.mobileMenu} openClassName={s.open} />
         )}
         <nav className={s.navbar}>
-          {Object.entries(navLinksU).map(([key, val]) => {
+          {Object.entries(navLinks).map(([key, val]) => {
             return (
               <Link
                 key={key}
