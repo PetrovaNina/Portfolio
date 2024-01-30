@@ -1,0 +1,14 @@
+.links {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+  @media (hover: hover) {
+    .icon:hover > path {
+      fill: var(--accent);
+      transition: fill 0.3s ease;
+    }
+  }
+}

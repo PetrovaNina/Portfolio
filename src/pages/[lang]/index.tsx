@@ -10,10 +10,12 @@ import FirstScreen from "@/components/FirstScreen";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
 import { ImperativeRef } from "@/functions/customHooks/useOnScreen";
+import Contacts from "@/components/Contacts";
 
 const FirstScreenVisible = withOnVisible(FirstScreen);
 const AboutVisible = withOnVisible(About);
 const ProjectsVisible = withOnVisible(Projects);
+const ContactsVisible = withOnVisible(Contacts);
 
 type Locales = { [key: string]: { title: string } };
 
@@ -70,6 +72,7 @@ const Home: React.FC<HomeProps> = ({ isTouch }) => {
         <FirstScreenVisible imperativeRef={navRef} />
         <AboutVisible imperativeRef={navRef} />
         <ProjectsVisible imperativeRef={navRef} />
+        <ContactsVisible imperativeRef={navRef} />
       </main>
     </>
   );
