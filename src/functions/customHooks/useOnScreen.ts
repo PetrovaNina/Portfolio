@@ -1,4 +1,23 @@
-import { useEffect, useState, RefObject } from "react";
+import { RefObject, useEffect, useState } from "react";
+
+function calculateThreshold(ref: RefObject<HTMLElement | null>): number {
+  const elementHeight = ref.current?.getBoundingClientRect().height || 0;
+  const screenHeight = window.innerHeight;
+
+  if (elementHeight === 0) {
+    return 0;
+  }
+
+  // Calculate the ratio of screenHeight to elementHeight
+  const ratio = screenHeight / elementHeight;
+
+  // Ensure the threshold is between 0 and 1
+  const threshold = Math.min(0.9, Math.max(0, ratio));
+
+  const adjustedThreshold = threshold - 0.2;
+
+  return Number(adjustedThreshold.toFixed(1));
+}
 
 export function useOnScreen(ref: RefObject<HTMLElement | null>): boolean {
   const [isIntersecting, setIntersecting] = useState(false);
@@ -6,7 +25,7 @@ export function useOnScreen(ref: RefObject<HTMLElement | null>): boolean {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setIntersecting(entry.isIntersecting),
-      { threshold: 0.7 }
+      { threshold: calculateThreshold(ref) }
     );
 
     if (ref.current) observer.observe(ref.current);

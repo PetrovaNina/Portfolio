@@ -12,7 +12,9 @@
   .link {
     text-transform: uppercase;
     font-weight: 600;
+    padding: 0 5px;
   }
+
   .images {
     flex-shrink: 0;
     @media screen and (min-width: 991px) {
@@ -117,5 +119,4 @@
       }
     }
   }
-
 }

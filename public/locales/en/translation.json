@@ -10,17 +10,18 @@
   "My favorite projects": "",
   "projectsTexts": {
     "audio": {
-      "title": "",
-      "intro": "",
+      "title": "SELF-GUIDED AUDIO TOURS PLATFORM: Elevating User Experience",
+      "intro": "Within working on the global platform providing self-guided audio tours and museum tickets around the world, I played a pivotal role in advancing the website's capabilities. My primary focus was on curating an intuitive and immersive digital experience for both content creators and users. Noteworthy accomplishments include:",
       "list": {
-        "0": "Created a user-friendly tour reservation block for easy booking.",
-        "1": "Developed an author registration page with an intuitive multi-step process for managing tours.",
-        "2": "Enhanced the product filtering feature to improve UX and simplify tour searches.",
-        "3": "Implemented the order editing tool, giving users more control over their bookings.",
-        "4": "Developed a dynamic user review page to encourage valuable feedback.",
-        "5": "Added an image compression feature, significantly improving site performance.",
-        "6": "Supported multilingual functionality for English and Russian, expanding service accessibility.",
-        "7": "Mentored a junior colleague, fostering a friendly team atmosphere."
+        "0": "Implemented a user-friendly tour booking block to streamline the reservation process;",
+        "1": "Developed a bespoke registration page, featuring an intuitive multi-step process for authoring and managing tours;",
+        "2": "Elevated the user experience by refining the product filtering feature, simplifying tour searches;",
+        "3": "Refined user event tracking by integrating various analytics systems through Google Tag Manager;",
+        "4": "Implemented an order editing tool, empowering users with increased control over their bookings;",
+        "5": "Developed a dynamic user review pagedynamic user review page, cultivating valuable feedback and engagement;",
+        "6": "Implemented an image compression feature, substantially enhancing site performance",
+        "7": "Supported multilingual functionality for English and Russian, expanding service accessibility.",
+        "8": "Mentored a junior colleague, nurturing a collaborative environment and fostering team camaraderie"
       }
     },
     "digital": {

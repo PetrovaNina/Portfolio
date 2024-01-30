@@ -18,22 +18,7 @@
   }
 
   .home_link {
-    background-color: var(--white);
-    width: 3em;
-    height: 3em;
     z-index: 1;
-    /* visibility: hidden;
-    opacity: 0; */
-
-    /* &.visible {
-      visibility: visible;
-      opacity: 1;
-    } */
-
-    &:focus,
-    &:hover {
-      border: 2px solid var(--accent);
-    }
   }
 
   .navbar {
@@ -44,22 +29,18 @@
     align-items: center;
     z-index: 0;
   }
-  .navbar_link {
+
+  .navbar_link,
+  .home_link {
     margin: 0;
     padding: 0 5px;
     font-size: 1.2em;
     font-weight: bold;
     text-transform: uppercase;
     flex-shrink: 0;
-    /* color: var(--white); */
 
-    &.highlighted,
-    &:focus {
+    &.highlighted {
       color: var(--accent);
-    }
-
-    &:focus-visible {
-      outline: 2px solid var(--accent);
     }
 
     &:not(.navbar_link.highlighted):hover {

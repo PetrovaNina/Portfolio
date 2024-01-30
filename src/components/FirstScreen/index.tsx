@@ -9,18 +9,21 @@ const FirstScreen: ForwardRefRenderFunction<HTMLDivElement, {}> = (
   ref
 ) => {
   return (
-    <section ref={ref} {...props} className={classNames(s.section, "before")}>
-        <div className={classNames(s.welcome, "container")}>
-          <h1 className={s.title}>{t("Hi! I'm Nina Petrova")}</h1>
-          <span className={s.info}>Frontend Developer</span>
-          <Link href="#about" className={classNames(s.btn, "btn")}>
-            {t("Learn more")}
-          </Link>
+    <section
+      ref={ref}
+      {...props}
+      id="home"
+      className={classNames(s.section, "before")}
+    >
+      <div className={classNames(s.welcome, "container")}>
+        <h1 className={s.title}>{t("Hi! I'm Nina Petrova")}</h1>
+        <span className={s.info}>Frontend Developer</span>
+        <Link href="#about" className={classNames(s.btn, "btn")}>
+          {t("Learn more")}
+        </Link>
       </div>
     </section>
   );
 };
 
 export default forwardRef(FirstScreen);
-
-export type FirstScreenProps = React.HTMLAttributes<HTMLDivElement>;

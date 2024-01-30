@@ -14,6 +14,7 @@ const projects = [
       t("projectsTexts.audio.list.5"),
       t("projectsTexts.audio.list.6"),
       t("projectsTexts.audio.list.7"),
+      t("projectsTexts.audio.list.8"),
     ],
     imagesCount: 3,
   },

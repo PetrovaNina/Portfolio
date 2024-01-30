@@ -25,5 +25,3 @@ const About: ForwardRefRenderFunction<HTMLDivElement, {}> = (props, ref) => (
 );
 
 export default forwardRef(About);
-
-export type FirstScreenProps = React.HTMLAttributes<HTMLDivElement>;

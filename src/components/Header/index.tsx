@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { t } from "i18next";
-import dynamic from 'next/dynamic'
+import dynamic from "next/dynamic";
 import LanguagesSwitcher from "../LanguagesSwitcher";
 import s from "./Header.module.css";
 import { forwardRef, useImperativeHandle, useState } from "react";
 import classNames from "../../functions/classNames";
 import { ImperativeRef } from "@/functions/customHooks/useOnScreen";
- 
-const MobileMenu = dynamic(() => import('./MobileMenu'), { ssr: false })
+
+const MobileMenu = dynamic(() => import("./MobileMenu"), { ssr: false });
 
 const Header: React.ForwardRefRenderFunction<ImperativeRef, HeaderProps> = (
   { isTouch },
@@ -28,11 +28,18 @@ const Header: React.ForwardRefRenderFunction<ImperativeRef, HeaderProps> = (
     }),
     [setVisibleItem]
   );
+  const isHome = visibleItem === "home";
 
   return (
-    <header className={classNames(s.header, "before", visibleItem && s.fixed)}>
+    <header className={classNames(s.header, "before", !isHome && s.fixed)}>
       <div className="container">
-        <Link href="#" className={s.home_link} />
+        <Link
+          id="home"
+          href="/"
+          className={classNames(s.home_link, isHome && s.highlighted)}
+        >
+          {t("home")}
+        </Link>
         {isTouch && (
           <MobileMenu className={s.mobileMenu} openClassName={s.open} />
         )}
@@ -51,7 +58,10 @@ const Header: React.ForwardRefRenderFunction<ImperativeRef, HeaderProps> = (
               </Link>
             );
           })}
-          <LanguagesSwitcher className={s.navbar_link} activeClassName={s.highlighted} />
+          <LanguagesSwitcher
+            className={s.navbar_link}
+            activeClassName={s.highlighted}
+          />
         </nav>
       </div>
     </header>

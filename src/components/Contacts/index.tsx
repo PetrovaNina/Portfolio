@@ -17,9 +17,9 @@ const Contacts: ForwardRefRenderFunction<HTMLDivElement, {}> = (props, ref) => (
     <div className="container container--s">
       <h2 className="section-title">{t("Let's work together")}</h2>
       <div className={s.links}>
-        {contacts.map((link) => (
-          <Link key={link.id} target="_blank" {...link}>
-            <Icon name={link.id} width="50" height="50" className={s.icon} />
+        {contacts.map(({ id, href }) => (
+          <Link key={id} target="_blank" href={href} className={s.link}>
+            <Icon name={id} width="50" height="50" className={s.icon} />
           </Link>
         ))}
       </div>

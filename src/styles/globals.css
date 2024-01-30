@@ -136,6 +136,11 @@ a {
   &[disabled] {
     pointer-events: none;
   }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    color: var(--accent);
+  }
 }
 
 .before::before {
@@ -148,5 +153,5 @@ a {
 }
 
 section {
-  min-height: 100vmin;
+  min-height: 70vh;
 }

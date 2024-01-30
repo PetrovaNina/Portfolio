@@ -39,7 +39,6 @@ const Projects: ForwardRefRenderFunction<HTMLDivElement, {}> = (props, ref) => {
                     {conclusion}
                     {href && (
                       <Link className={s.link} href={href} target="_blank">
-                        {" "}
                         {t("VIEW SITE")}
                       </Link>
                     )}
