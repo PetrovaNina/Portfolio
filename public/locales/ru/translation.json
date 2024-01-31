@@ -1,13 +1,19 @@
 {
   "About me": "Обо мне",
-  "frontendDeveloperIntroduction": "",
-  "collaborationExperience": "",
+  "frontendDeveloperIntroduction": "Frontend-разработчик с опытом в digital-маркетинге, специализирующийся на создании веб-приложений с использованием SSR, React и Redux, а также владеющий инструментами тестирования, включая Jest. Опыт работы в распределенных scrum-командах с использованием различных инструментов управления задачами. Опыт в JS, TS, HTML, CSS (SСSS/PostCSS), Webpack, REST API, Node.js, Docker и Postman.",
+  "collaborationExperience": "Моя цель - создание увлекательных и запоминающихся пользовательских впечатлений на адаптивных мобильных веб-сайтах. Меня привлекают разнообразные проекты, особенно в области жизненных наук, развлечений и социальных инициатив, с целью развития собственных навыков и следования за передовыми технологиями.",
+  "Key Skills": "Ключевые навыки",
+  "Distributed Scrum Teams": "Работа в распределенных scrum-командах",
+  "Project Collaboration and Management": "Совместная работа и управление проектами",
+  "Let's craft together": "Давайте творить вместе",
   "Hi! I'm Nina Petrova": "Привет! Я Нина Петрова",
   "Learn more": "Узнать больше",
-  "about": "Обо мне",
-  "projects": "",
-  "contacts": "Контакты",
+  "about": "обо мне",
+  "projects": "проекты",
+  "contacts": "контакты",
+  "home": "главная",
   "My favorite projects": "Избранные проекты",
+  "VIEW SITE": "посмотреть",
   "projectsTexts": {
     "audio": {
       "title": "",
@@ -20,7 +26,8 @@
         "4": "",
         "5": "",
         "6": "",
-        "7": ""
+        "7": "",
+        "8": ""
       }
     },
     "digital": {

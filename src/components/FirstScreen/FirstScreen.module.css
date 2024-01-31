@@ -1,19 +1,11 @@
 .section {
-  background: url(./bg.webp) no-repeat center / cover;
+  background: url(/img/bg.jpg) no-repeat center / cover;
+  mask-image: linear-gradient(rgba(0, 0, 0, 1) 70%, 85%, rgba(0, 0, 0, 0));
   letter-spacing: 0.1em;
   justify-content: center;
   height: 100vh;
   color: var(--white);
   position: relative;
-
-  &::before {
-    background-image: linear-gradient(
-      var(--semi-black),
-      transparent 10%,
-      transparent 90%,
-      var(--black)
-    );
-  }
 
   .welcome {
     display: flex;

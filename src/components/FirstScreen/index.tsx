@@ -9,12 +9,7 @@ const FirstScreen: ForwardRefRenderFunction<HTMLDivElement, {}> = (
   ref
 ) => {
   return (
-    <section
-      ref={ref}
-      {...props}
-      id="home"
-      className={classNames(s.section, "before")}
-    >
+    <section ref={ref} {...props} id="home" className={s.section}>
       <div className={classNames(s.welcome, "container")}>
         <h1 className={s.title}>{t("Hi! I'm Nina Petrova")}</h1>
         <span className={s.info}>Frontend Developer</span>

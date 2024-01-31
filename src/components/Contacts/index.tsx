@@ -15,7 +15,7 @@ const contacts = [
 const Contacts: ForwardRefRenderFunction<HTMLDivElement, {}> = (props, ref) => (
   <section ref={ref} {...props} id="contacts">
     <div className="container container--s">
-      <h2 className="section-title">{t("Let's work together")}</h2>
+      <h2 className="section-title">{t("Let's craft together")}</h2>
       <div className={s.links}>
         {contacts.map(({ id, href }) => (
           <Link key={id} target="_blank" href={href} className={s.link}>

@@ -13,7 +13,7 @@ const Header: React.ForwardRefRenderFunction<ImperativeRef, HeaderProps> = (
   { isTouch },
   forwardedRef
 ) => {
-  const [visibleItem, setVisibleItem] = useState<string | null>();
+  const [visibleItem, setVisibleItem] = useState<string | null>("home");
 
   const navLinks = {
     about: t("about"),

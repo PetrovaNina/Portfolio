@@ -1,15 +1,17 @@
 .header {
   position: absolute;
   top: 0;
-  background: transparent;
+  background-image: linear-gradient(transparent, transparent);
   padding: 0.5em 0;
   z-index: 1;
   color: var(--white);
+  transition: background-image 5s ease;
 
   &.fixed {
     position: fixed;
-    background-color: var(--semi-black);
+    background-image: linear-gradient(var(--darker) 55%, 85%,var(--semi-dark));
     backdrop-filter: blur(5px);
+    transition: background-image 5s ease;
   }
 
   .container {
@@ -101,7 +103,7 @@
 
   @media only screen and (max-width: 767px) {
     position: fixed;
-    background-color: var(--semi-black);
+    background-color: var(--semi-dark);
     &.fixed {
       backdrop-filter: unset;
     }
@@ -118,7 +120,7 @@
       padding: 1em 0;
       flex-direction: column;
       gap: 0.5em;
-      background-color: var(--semi-black);
+      background-color: var(--semi-dark);
       backdrop-filter: blur(5px);
       transition: var(--transition-04);
       opacity: 0;

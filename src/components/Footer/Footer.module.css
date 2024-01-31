@@ -1,10 +1,9 @@
 .Footer {
-  padding: 0;
-  text-align: center;
   font-size: 0.8em;
   color: var(--accent);
-
-  .container {
-    justify-content: center;
-  }
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--darker);
 }

@@ -8,7 +8,7 @@ const About: ForwardRefRenderFunction<HTMLDivElement, {}> = (props, ref) => (
       <p>{t("frontendDeveloperIntroduction")}</p>
       <p>{t("collaborationExperience")}</p>
       <div>
-        <h3 className="skills-title">Key Skills:</h3>
+        <h3 className="section-subtitle">{t("Key Skills")}:</h3>
         <ul>
           <li>SSR (Afrer.js, Next.js)</li>
           <li>React, Redux, Jest</li>
@@ -16,8 +16,8 @@ const About: ForwardRefRenderFunction<HTMLDivElement, {}> = (props, ref) => (
           <li>HTML, CSS (SСSS/PostCSS), Webpack</li>
           <li>REST APIs, Node.js, Docker, Postman</li>
           <li>Tag Manager, Google Analytics</li>
-          <li>Distributed Scrum Teams, Jira, ClickUp</li>
-          <li>Project Collaboration and Management</li>
+          <li>{t("Distributed Scrum Teams")}, Jira, ClickUp</li>
+          <li>{t("Project Collaboration and Management")}</li>
         </ul>
       </div>
     </div>

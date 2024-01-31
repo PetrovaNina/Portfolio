@@ -1,6 +1,6 @@
 .project {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: center;
   width: 100%;
   margin-bottom: 4em;
@@ -13,13 +13,13 @@
     text-transform: uppercase;
     font-weight: 600;
     padding: 0 5px;
+    color: var(--accent);
   }
 
   .images {
     flex-shrink: 0;
     @media screen and (min-width: 991px) {
       width: 30%;
-      aspect-ratio: 3/4;
       position: relative;
       height: fit-content;
 
@@ -45,15 +45,8 @@
         margin-left: auto;
       }
 
-      &.three :first-child:not(:last-child) {
-        width: 60%;
-      }
-
-      &.three :nth-child(2) {
-        position: absolute;
-        width: 50%;
-        left: 5%;
-        bottom: 0;
+      &:has(:first-child:last-child) {
+        width: 25%;
       }
     }
   }
@@ -66,7 +59,7 @@
     width: -webkit-fill-available;
     position: relative;
     background-color: var(--gray-dark);
-    border: 1px solid var(--gray-dark);
+    border: 0.5px solid var(--gray-dark);
   }
 
   .text {

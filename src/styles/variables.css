@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 
 :root {
-  --accent: #daba92;
+  --accent: #fff19c;
   --white: #ffffff;
-  --black: #09090d;
   --gray: #e8e8e8;
+  --gray-dark: rgb(176, 176, 176, 0.5);
   --gray-light: #f8f8f8;
-  --gray-dark: rgb(176, 176, 176, 0.5);;
-  --semi-black: rgb(0, 0, 0, 0.5);
-  --nearly-black: rgb(0, 0, 0, 0.8);
+  --dark: rgb(9, 76, 101);
+  --semi-dark: rgba(9, 76, 101, 0.5);
+  --darker: rgba(7, 50, 75, 0.6);
   --animMargin: 0;
   --header-height: 90px;
 
