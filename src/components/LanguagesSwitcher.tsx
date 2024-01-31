@@ -12,7 +12,7 @@ const LanguagesSwitcher: React.FC<LanguagesSwitcherProps> = ({
   className,
   activeClassName,
 }) => {
-  const { pathname, asPath, query, push } = useRouter();
+  const { pathname, asPath, query, push, locale: routerLocale } = useRouter();
 
   return (
     <div className="LanguagesSwitcher">
@@ -21,14 +21,14 @@ const LanguagesSwitcher: React.FC<LanguagesSwitcherProps> = ({
           key={locale}
           className={classNames(
             className,
-            locale === query.lang && activeClassName
+            locale === routerLocale && activeClassName
           )}
           onClick={() => {
             i18next.changeLanguage(locale);
 
             const lang =
-              query.lang && typeof query.lang === "string"
-                ? query.lang
+              routerLocale && typeof routerLocale === "string"
+                ? routerLocale
                 : locale;
             // if (query.lang && typeof query.lang === "string")
             push({ pathname, query }, asPath.replace(lang, locale), {
