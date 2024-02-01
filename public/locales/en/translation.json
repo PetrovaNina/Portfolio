@@ -1,0 +1,66 @@
+{
+  "frontendDeveloperIntroduction": "Hi! I am a Frontend Developer with a marketing background and a diverse portfolio, ranging from simple interfaces to high-traffic React applications. My approach to web development is based on a deep understanding of user needs, enabling me to create user-friendly and intuitive interfaces. Working in distributed scrum teams, I use various tools for efficient task management.",
+  "collaborationExperience": "I strive to continuously evolve, staying abreast of cutting-edge technologies. I am dedicated to crafting engaging and memorable user experiences for mobile-first responsive websites. My passion lies in undertaking diverse projects, especially those within life sciences, entertainment, and social sectors, aiming at developing my skills further and staying abreast of cutting-edge technologies.",
+  "Key Skills": "",
+  "Distributed Scrum Teams": "",
+  "Project Collaboration and Management": "",
+  "Let's craft together": "",
+  "Hi! I'm Nina Petrova": "",
+  "Learn more": "",
+  "about": "",
+  "projects": "",
+  "contacts": "",
+  "home": "",
+  "projectsTexts": {
+    "audio": {
+      "title": "SELF-GUIDED AUDIO TOURS PLATFORM: Elevating User Experience",
+      "intro": "Within working on the global platform providing self-guided audio tours and museum tickets around the world, I played a pivotal role in advancing the website's capabilities. My primary focus was on curating an intuitive and immersive digital experience for both content creators and users. Noteworthy accomplishments include:",
+      "list": {
+        "0": "Implemented a user-friendly tour booking block and order editing tool, simplifying the purchase process and expanding user control over their orders;",
+        "1": "Developed a bespoke registration page, featuring an intuitive multi-step process for authoring and managing tours;",
+        "2": "Elevated the user experience by refining the product filtering feature, simplifying tour searches;",
+        "3": "Refined user event tracking by integrating various analytics systems through Google Tag Manager;",
+        "4": "Developed a dynamic user review page, cultivating valuable feedback and engagement;",
+        "5": "Implemented an image compression feature, substantially enhancing site performance;",
+        "6": "Supported multilingual functionality for English and Russian, expanding service accessibility;",
+        "7": "Mentored a junior colleague, nurturing a collaborative environment and fostering team camaraderie."
+      }
+    },
+    "digital": {
+      "title": "MARKETING AGENCY WEBSITE: Crafted to Perfection",
+      "intro": "This meticulously designed website for a cutting-edge marketing agency was my individual project, which required a seamless fusion of creativity and functionality. Productive collaboration with the client’s designer made this website close to a marketing masterpiece, and patient interaction with the agency’s manager allowed both sides to achieve absolute satisfaction with the result. What I actually did:",
+      "list": {
+        "0": "Transformed their Figma design into captivating HTML and CSS, ensuring a pixel-perfect representation of the agency's vision;",
+        "1": "Seamlessly integrated my code into WordPress, providing a robust and user-friendly content management system;",
+        "2": "Enhanced the user experience by making the website’s interface bilingual, thus catering to a more diverse audience;",
+        "3": "Implemented reCAPTCHA to fortify the website against automated requests, ensuring a secure and smooth user interaction;",
+        "4": "Configured seamless sending and redirection of email forms, streamlining communication channels for enhanced client engagement;",
+        "5": "Prioritized user data security by creating and integrating SSL certificates, fostering trust and reliability."
+      }
+    },
+    "nft": {
+      "title": "NFT Generator website: Transformative Project Migration and Design Upgrade",
+      "intro": "This NFT Generator project had a heavy legacy code which impeded further development and scaling. It underwent a significant transformation under my expertise. My role in transforming the site reflects a commitment to excellence in web development, ensuring a sustained and visually appealing user experience. My achievements:",
+      "list": {
+        "0": "Successfully migrated the project from JS + jQuery to React, enhancing its performance and capabilities;",
+        "1": "Crafted adaptive and responsive client interfaces, ensuring ongoing user interaction across devices;",
+        "2": "Implemented a fresh and modern design to elevate the visual appeal and user experience;",
+        "3": "Introduced CSS Modules, replacing Styled Components, for improved styling and maintainability.",
+        "4": ""
+      }
+    },
+    "cats": {
+      "title": "CAT QUEST: Making Multilevel Guessing Game",
+      "intro": "My first pet project, this was a simple but absolutely charming game, which helped me to dive into the JavaScript world. A browser-based game that brought guessing games to life! I created:",
+      "list": {
+        "0": "Responsive design for playing on various devices;",
+        "1": "Dynamic elements for continual interaction;",
+        "2": "Engaging CSS animation for better fun."
+      },
+      "conclusion": "Experience the world of CAT QUEST, showcasing my skills in crafting enjoyable and dynamic online experiences:"
+    }
+  },
+  "My favorite projects": "",
+  "VIEW SITE": "",
+  "Nina Petrova | Frontend Developer Portfolio": ""
+}

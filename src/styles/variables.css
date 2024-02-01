@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+:root {
+  --accent: #fff19c;
+  --white: #ffffff;
+  --gray: #e8e8e8;
+  --gray-dark: rgb(176, 176, 176, 0.5);
+  --gray-light: #f8f8f8;
+  --dark: rgb(9, 76, 101);
+  --semi-dark: rgba(9, 76, 101, 0.5);
+  --darker: rgba(7, 50, 75, 0.6);
+  --animMargin: 0;
+  --header-height: 90px;
+
+  /**
+   * Fonts using while preloading Lato
+   * Or if preloading failed
+   */
+  --fonts: Roboto, sans-serif;
+  --font-size-heading-first: 30px;
+  --font-size-heading-second: 22px;
+  --font-size-heading-third: 18px;
+
+  --tablet: only screen and (min-width: 768px) and (max-width: 991px);
+  /**
+   * Margins between content and page body
+   * On desktop does not make sense because numeric value is unknown
+   * 0 here on desktop to not to violate calculations
+   */
+  --wrapper-margin: 0;
+  --wrapper-padding: 120px;
+
+  @media only screen and (max-width: 991px) {
+    --wrapper-margin: 15px;
+  }
+
+  --transition-03: all 0.3s ease;
+  --transition-04: all 0.4s ease;
+  --transition-05: all 0.5s ease;
+  --transition-05: all 0.8s ease;
+}

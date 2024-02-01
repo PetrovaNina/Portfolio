@@ -1,0 +1,21 @@
+.links {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .link {
+    display: flex;
+    border-radius: 50%;
+    overflow: hidden;
+
+    @media (hover: hover) {
+      .icon:hover > path,
+      &:focus-visible .icon > path {
+        fill: var(--accent);
+        transition: fill 0.3s ease;
+      }
+    }
+  }
+}

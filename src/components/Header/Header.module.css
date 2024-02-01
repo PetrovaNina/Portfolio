@@ -1,0 +1,140 @@
+.header {
+  position: absolute;
+  top: 0;
+  background-image: linear-gradient(transparent, transparent);
+  padding: 0.5em 0;
+  z-index: 1;
+  color: var(--white);
+  transition: background-image 5s ease;
+
+  &.fixed {
+    position: fixed;
+    background-image: linear-gradient(var(--darker) 55%, 85%,var(--semi-dark));
+    backdrop-filter: blur(5px);
+    transition: background-image 5s ease;
+  }
+
+  .container {
+    height: 3em;
+    flex-wrap: nowrap;
+  }
+
+  .home_link {
+    z-index: 1;
+  }
+
+  .navbar {
+    height: 3em;
+    display: flex;
+    column-gap: 1em;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 0;
+  }
+
+  .navbar_link,
+  .home_link {
+    margin: 0;
+    padding: 0 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    flex-shrink: 0;
+
+    &.highlighted {
+      color: var(--accent);
+    }
+
+    &:not(.navbar_link.highlighted):hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      outline: none;
+    }
+  }
+
+  .mobileMenu {
+    display: block;
+    position: relative;
+    width: 20px;
+    padding: 1.5em;
+    height: 1em;
+
+    &::before,
+    &::after,
+    span {
+      position: absolute;
+      content: "";
+      width: 20px;
+      height: 2px;
+      right: 1em;
+      background-color: #ffffff;
+      transition: var(--transition-03);
+    }
+
+    &::before {
+      top: 1em;
+    }
+
+    &::after {
+      bottom: 1em;
+    }
+
+    & > span {
+      top: calc(1.5em - 1px);
+    }
+
+    /* Change mobileMenu to X */
+    &.open {
+      &::before {
+        transform: rotate(45deg);
+        top: 45%;
+      }
+      &::after {
+        transform: rotate(-45deg);
+        top: 45%;
+      }
+      & > span {
+        transform: scale(0);
+      }
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    position: fixed;
+    background-color: var(--semi-dark);
+    &.fixed {
+      backdrop-filter: unset;
+    }
+    &::before {
+      backdrop-filter: blur(5px);
+    }
+
+    .navbar {
+      position: absolute;
+      top: -100%;
+      width: 100%;
+      left: 0;
+      height: fit-content;
+      padding: 1em 0;
+      flex-direction: column;
+      gap: 0.5em;
+      background-color: var(--semi-dark);
+      backdrop-filter: blur(5px);
+      transition: var(--transition-04);
+      opacity: 0;
+      z-index: -1;
+    }
+
+    .mobileMenu.open + .navbar {
+      top: 4em;
+      opacity: 1;
+    }
+
+    .navbar_link {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
