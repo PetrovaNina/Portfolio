@@ -1,7 +1,6 @@
 {
-  "About me": "",
-  "frontendDeveloperIntroduction": "Frontend Developer with a background in digital marketing, specializing in constructing web applications through SSR, React, and Redux, with proficiency in Jest for testing. Experienced in collaborating within distributed scrum teams and using various task management tools. Fluent in JS, TS, HTML, CSS (SСSS/PostCSS), Webpack, REST APIs, Node.js, Docker, Postman.",
-  "collaborationExperience": "I am dedicated to crafting engaging and memorable user experiences for mobile-first responsive websites. My passion lies in undertaking diverse projects, especially those within life sciences, entertainment, and social sectors, aiming at developing my skills further and staying abreast of cutting-edge technologies.",
+  "frontendDeveloperIntroduction": "Hi! I am a Frontend Developer with a marketing background and a diverse portfolio, ranging from simple interfaces to high-traffic React applications. My approach to web development is based on a deep understanding of user needs, enabling me to create user-friendly and intuitive interfaces. Working in distributed scrum teams, I use various tools for efficient task management.",
+  "collaborationExperience": "I strive to continuously evolve, staying abreast of cutting-edge technologies. I am dedicated to crafting engaging and memorable user experiences for mobile-first responsive websites. My passion lies in undertaking diverse projects, especially those within life sciences, entertainment, and social sectors, aiming at developing my skills further and staying abreast of cutting-edge technologies.",
   "Key Skills": "",
   "Distributed Scrum Teams": "",
   "Project Collaboration and Management": "",
@@ -12,22 +11,19 @@
   "projects": "",
   "contacts": "",
   "home": "",
-  "My favorite projects": "",
-  "VIEW SITE": "",
   "projectsTexts": {
     "audio": {
       "title": "SELF-GUIDED AUDIO TOURS PLATFORM: Elevating User Experience",
       "intro": "Within working on the global platform providing self-guided audio tours and museum tickets around the world, I played a pivotal role in advancing the website's capabilities. My primary focus was on curating an intuitive and immersive digital experience for both content creators and users. Noteworthy accomplishments include:",
       "list": {
-        "0": "Implemented a user-friendly tour booking block to streamline the reservation process;",
+        "0": "Implemented a user-friendly tour booking block and order editing tool, simplifying the purchase process and expanding user control over their orders;",
         "1": "Developed a bespoke registration page, featuring an intuitive multi-step process for authoring and managing tours;",
         "2": "Elevated the user experience by refining the product filtering feature, simplifying tour searches;",
         "3": "Refined user event tracking by integrating various analytics systems through Google Tag Manager;",
-        "4": "Implemented an order editing tool, empowering users with increased control over their bookings;",
-        "5": "Developed a dynamic user review pagedynamic user review page, cultivating valuable feedback and engagement;",
-        "6": "Implemented an image compression feature, substantially enhancing site performance",
-        "7": "Supported multilingual functionality for English and Russian, expanding service accessibility.",
-        "8": "Mentored a junior colleague, nurturing a collaborative environment and fostering team camaraderie"
+        "4": "Developed a dynamic user review page, cultivating valuable feedback and engagement;",
+        "5": "Implemented an image compression feature, substantially enhancing site performance;",
+        "6": "Supported multilingual functionality for English and Russian, expanding service accessibility;",
+        "7": "Mentored a junior colleague, nurturing a collaborative environment and fostering team camaraderie."
       }
     },
     "digital": {
@@ -49,7 +45,8 @@
         "0": "Successfully migrated the project from JS + jQuery to React, enhancing its performance and capabilities;",
         "1": "Crafted adaptive and responsive client interfaces, ensuring ongoing user interaction across devices;",
         "2": "Implemented a fresh and modern design to elevate the visual appeal and user experience;",
-        "3": "Introduced CSS Modules, replacing Styled Components, for improved styling and maintainability."
+        "3": "Introduced CSS Modules, replacing Styled Components, for improved styling and maintainability.",
+        "4": ""
       }
     },
     "cats": {
@@ -63,5 +60,7 @@
       "conclusion": "Experience the world of CAT QUEST, showcasing my skills in crafting enjoyable and dynamic online experiences:"
     }
   },
+  "My favorite projects": "",
+  "VIEW SITE": "",
   "Nina Petrova | Frontend Developer Portfolio": ""
 }

@@ -4,7 +4,7 @@ import { forwardRef, ForwardRefRenderFunction } from "react";
 const About: ForwardRefRenderFunction<HTMLDivElement, {}> = (props, ref) => (
   <section ref={ref} {...props} id="about">
     <div className="container container--s">
-      <h2 className="section-title">{t("About me")}</h2>
+      {/* <h2 className="section-title">{t("About me")}</h2> */}
       <p>{t("frontendDeveloperIntroduction")}</p>
       <p>{t("collaborationExperience")}</p>
       <div>
@@ -17,7 +17,6 @@ const About: ForwardRefRenderFunction<HTMLDivElement, {}> = (props, ref) => (
           <li>REST APIs, Node.js, Docker, Postman</li>
           <li>Tag Manager, Google Analytics</li>
           <li>{t("Distributed Scrum Teams")}, Jira, ClickUp</li>
-          <li>{t("Project Collaboration and Management")}</li>
         </ul>
       </div>
     </div>

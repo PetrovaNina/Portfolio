@@ -14,14 +14,11 @@ function App({ Component, pageProps }: AppProps) {
 
   const isTouch = width <= 768;
 
-  // useEffect(() => {
-  //   if (
-  //     !["en", "ru"].some((l) => l === router.query.lang) ||
-  //     router.pathname === "/_error"
-  //   ) {
-  //     router.push(`/en`, `/en`, { locale: "en" });
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (router.pathname === "/_error") {
+      router.push(`/`, `/`, { locale: "en" });
+    }
+  }, []);
 
   return (
     <I18nextProvider i18n={i18n}>
