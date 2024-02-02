@@ -15,7 +15,8 @@ function App({ Component, pageProps }: AppProps) {
   const isTouch = width <= 768;
 
   useEffect(() => {
-    if (router.pathname === "/_error") {
+    
+    if (router?.pathname === "/_error") {
       router.push(`/`, `/`, { locale: "en" });
     }
   }, []);

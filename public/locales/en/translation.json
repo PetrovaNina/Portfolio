@@ -3,7 +3,6 @@
   "collaborationExperience": "I strive to continuously evolve, staying abreast of cutting-edge technologies. I am dedicated to crafting engaging and memorable user experiences for mobile-first responsive websites. My passion lies in undertaking diverse projects, especially those within life sciences, entertainment, and social sectors, aiming at developing my skills further and staying abreast of cutting-edge technologies.",
   "Key Skills": "",
   "Distributed Scrum Teams": "",
-  "Project Collaboration and Management": "",
   "Let's craft together": "",
   "Hi! I'm Nina Petrova": "",
   "Learn more": "",
@@ -43,10 +42,10 @@
       "intro": "This NFT Generator project had a heavy legacy code which impeded further development and scaling. It underwent a significant transformation under my expertise. My role in transforming the site reflects a commitment to excellence in web development, ensuring a sustained and visually appealing user experience. My achievements:",
       "list": {
         "0": "Successfully migrated the project from JS + jQuery to React, enhancing its performance and capabilities;",
-        "1": "Crafted adaptive and responsive client interfaces, ensuring ongoing user interaction across devices;",
-        "2": "Implemented a fresh and modern design to elevate the visual appeal and user experience;",
-        "3": "Introduced CSS Modules, replacing Styled Components, for improved styling and maintainability.",
-        "4": ""
+        "1": "Optimized data transfer through the Fetch API for generating and scaling images;",
+        "2": "Eliminated code redundancy by introducing reusable components;",
+        "3": "Implemented a new design to enhance visual appeal and overall user experience;",
+        "4": "Introduced CSS Modules for easier style management."
       }
     },
     "cats": {

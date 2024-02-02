@@ -1,8 +1,8 @@
 import { t } from "i18next";
+import Link from "next/link";
 import s from "./Projects.module.css";
 import { ForwardRefRenderFunction, forwardRef } from "react";
 import classNames from "@/functions/classNames";
-import Link from "next/link";
 
 const Projects: ForwardRefRenderFunction<HTMLDivElement, {}> = (props, ref) => {
   const projects = [
@@ -85,7 +85,7 @@ const Projects: ForwardRefRenderFunction<HTMLDivElement, {}> = (props, ref) => {
                   ))}
               </div>
               <div className={s.text}>
-                <h3 className="section-subtitle">{title}</h3>
+                <h3 className="title--large">{title}</h3>
                 <p>{intro}</p>
                 <ul>
                   {list.map((item, i) => (
