@@ -1,8 +1,8 @@
 import { t } from "i18next";
+import Link from "next/link";
 import s from "./Projects.module.css";
 import { ForwardRefRenderFunction, forwardRef } from "react";
 import classNames from "@/functions/classNames";
-import Link from "next/link";
 
 const Projects: ForwardRefRenderFunction<HTMLDivElement, {}> = (props, ref) => {
   const projects = [
@@ -50,16 +50,16 @@ const Projects: ForwardRefRenderFunction<HTMLDivElement, {}> = (props, ref) => {
       imagesCount: 2,
     },
     {
-      name: "cats",
-      title: t("projectsTexts.cats.title"),
-      intro: t("projectsTexts.cats.intro"),
+      name: "kittens",
+      title: t("projectsTexts.kittens.title"),
+      intro: t("projectsTexts.kittens.intro"),
       list: [
-        t("projectsTexts.cats.list.0"),
-        t("projectsTexts.cats.list.1"),
-        t("projectsTexts.cats.list.2"),
+        t("projectsTexts.kittens.list.0"),
+        t("projectsTexts.kittens.list.1"),
+        t("projectsTexts.kittens.list.2"),
       ],
       imagesCount: 1,
-      conclusion: t("projectsTexts.cats.conclusion"),
+      conclusion: t("projectsTexts.kittens.conclusion"),
       href: "https://petrovanina.github.io/Find_cat/",
     },
   ];
@@ -85,7 +85,7 @@ const Projects: ForwardRefRenderFunction<HTMLDivElement, {}> = (props, ref) => {
                   ))}
               </div>
               <div className={s.text}>
-                <h3 className="section-subtitle">{title}</h3>
+                <h3 className="title--large">{title}</h3>
                 <p>{intro}</p>
                 <ul>
                   {list.map((item, i) => (
