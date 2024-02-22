@@ -62,6 +62,9 @@ const Projects: ForwardRefRenderFunction<HTMLDivElement, {}> = (props, ref) => {
       conclusion: t("projectsTexts.cats.conclusion"),
       href: "https://petrovanina.github.io/Find_cat/",
     },
+    {
+      title: " ",
+    },
   ];
 
   return (
@@ -71,24 +74,26 @@ const Projects: ForwardRefRenderFunction<HTMLDivElement, {}> = (props, ref) => {
         {projects.map(
           ({ name, intro, title, list, conclusion, href, imagesCount }, i) => (
             <div key={name} className={classNames(i % 2 && s.flip, s.project)}>
-              <div className={s.images}>
-                {Array(imagesCount)
-                  .fill("")
-                  .map((_, i) => (
-                    <div
-                      key={i}
-                      className={s.imageDiv}
-                      style={{
-                        backgroundImage: `url('img/${name}${i + 1}.webp')`,
-                      }}
-                    />
-                  ))}
-              </div>
+              {imagesCount && name && (
+                <div className={s.images}>
+                  {Array(imagesCount)
+                    .fill(" ")
+                    .map((_, i) => (
+                      <div
+                        key={i}
+                        className={s.imageDiv}
+                        style={{
+                          backgroundImage: `url('img/${name}${i + 1}.webp')`,
+                        }}
+                      />
+                    ))}
+                </div>
+              )}
               <div className={s.text}>
                 <h3 className="title--large">{title}</h3>
                 <p>{intro}</p>
                 <ul>
-                  {list.map((item, i) => (
+                  {list?.map((item, i) => (
                     <li key={i}>{item}</li>
                   ))}
                 </ul>
